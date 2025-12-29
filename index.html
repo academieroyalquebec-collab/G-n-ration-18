@@ -325,13 +325,20 @@ section {
   background: var(--gold);
   color: #111;
 }
-    .hero {
+   .hero {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 32px;
-  align-items: center;
+  display: block;
+
+  /* BANNIÈRE PHOTO (HERO SEULEMENT) */
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 75vh;
+  padding: 120px 8% 100px;
   margin-bottom: 48px;
+}
 
   /* IMAGE DE FOND */
   background-image: url("hero.jpg");
