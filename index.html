@@ -4,7 +4,80 @@
   <meta charset="UTF-8">
   <title>Génération 18</title>
 <style>
-  /* === CSS GLOBAL DU SITE === */
+  /* ===== WHY US (PREMIUM) ===== */
+.why-us{
+  padding: 90px 0;
+  background: #f5f5f5;
+}
+
+.why-header{
+  text-align:center;
+  margin-bottom: 42px;
+}
+
+.why-header h2{
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  color:#0f172a;
+  margin: 0 0 10px;
+}
+
+.why-subtitle{
+  max-width: 720px;
+  margin: 0 auto;
+  color:#475569;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.why-card{
+  background:#fff;
+  border-radius: 18px;
+  padding: 26px 24px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(15,23,42,0.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.why-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.10);
+}
+
+.why-card h3{
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  color:#0f172a;
+}
+
+.why-card p{
+  margin: 0;
+  color:#475569;
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+.why-proof{
+  margin-top: 34px;
+  display:flex;
+  gap: 14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.why-proof span{
+  background: rgba(15,23,42,0.06);
+  color:#0f172a;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .9rem;
+}
   </style>
 </head>
 
@@ -587,6 +660,46 @@ section {
 
   </div>
   
+</section>
+ <section class="why-us">
+  <div class="container">
+
+    <div class="why-header">
+      <h2>Pourquoi Génération 18</h2>
+      <p class="why-subtitle">
+        Une structure claire, humaine et mesurable — inspirée des meilleures académies.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Plan de développement individuel</h3>
+        <p>Chaque athlète suit un plan clair, évolutif et mesurable selon son âge, son niveau et ses objectifs.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Suivi statistiques & compétition</h3>
+        <p>Analyse de performance, bilans réguliers et accompagnement en tournoi pour transformer l’entraînement en résultats.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Encadrement technique, mental et physique</h3>
+        <p>Une approche complète intégrant technique de golf, préparation mentale et développement physique.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Structure sport-études & élite</h3>
+        <p>Un environnement structuré inspiré des meilleures académies pour soutenir la progression à long terme.</p>
+      </div>
+    </div>
+
+    <div class="why-proof">
+      <span>+40 athlètes actifs</span>
+      <span>Encadrement Rouge et Or</span>
+      <span>10 ans d’expérience</span>
+    </div>
+
+  </div>
 </section>
   
   <!-- A PROPOS -->
