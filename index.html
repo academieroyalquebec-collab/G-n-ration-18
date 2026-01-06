@@ -339,44 +339,39 @@ section {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
-    .hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.65);
-  z-index:0;
-}
-
-.hero > div{
+/* HERO IMAGE OVERLAY */
+.hero {
   position: relative;
-  z-index:1;
-  max-width: 720px;
 }
 
-    .hero-title {
-  text-shadow: 0 4px 20px rgba(0,0,0,0.35);
-}
-.hero-subtitle {
-  color: rgba(255,255,255,0.95);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
-}
-  color:#fff;
-}
-
-    .hero::before {
+.hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
+/* CONTENU AU-DESSUS DE L’IMAGE */
 .hero > div {
   position: relative;
   z-index: 2;
   max-width: 720px;
+}
+
+/* TITRE */
+.hero-title {
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.45);
+}
+
+/* SOUS-TITRE (LE GRIS PROBLÉMATIQUE) */
+.hero-subtitle {
+  color: #ffffff;        /* ← BLANC */
+  opacity: 1;            /* ← PAS TRANSPARENT */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
 }
 
   /* IMAGE DE FOND */
