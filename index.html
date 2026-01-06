@@ -325,9 +325,36 @@ section {
   background: var(--gold);
   color: #111;
 }
-   .hero {
+ .hero{
   position: relative;
-  display: block;
+  padding: 120px 8% 90px;
+  min-height: 70vh;
+  margin-bottom: 48px;
+
+  /* BANNIÈRE PHOTO (EN HAUT SEULEMENT) */
+  background-image: url("kevin Bergeron/IMG_0139.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+    .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+  z-index:0;
+}
+
+.hero > div{
+  position: relative;
+  z-index:1;
+  max-width: 720px;
+}
+
+.hero-title,
+.hero-subtitle{
+  color:#fff;
+}
 
   /* BANNIÈRE PHOTO (HERO SEULEMENT) */
   background-image: url("hero.jpg");
