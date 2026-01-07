@@ -444,6 +444,36 @@
     max-width: 320px;
   }
 }
+   /* ===== REVEAL ANIMATION (PREMIUM) ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Petite variation pour cartes */
+.reveal--card{
+  transform: translateY(14px) scale(0.99);
+}
+
+.reveal--card.is-visible{
+  transform: translateY(0) scale(1);
+}
+
+/* Respect accessibilité */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal--card{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 </style>
 
 
@@ -1236,6 +1266,30 @@ section {
 <footer>
   Site pré-lancement — Contenu évolutif.
 </footer>
+<script>
+  // ===== REVEAL ON SCROLL (simple & premium) =====
+  const revealEls = document.querySelectorAll(
+    ".stats-strip, .why-us, #apropos, #galerie, #programmes, #coachs, #installations, #contact, .why-card, .card"
+  );
 
+  revealEls.forEach(el => {
+    el.classList.add("reveal");
+    // Petites sections “card-like”
+    if (el.classList.contains("why-card") || el.classList.contains("card")) {
+      el.classList.add("reveal--card");
+    }
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
+
+  revealEls.forEach(el => io.observe(el));
+</script>
 </body>
 </html>
