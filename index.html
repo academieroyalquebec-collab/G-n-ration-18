@@ -92,29 +92,87 @@
     .btn-primary{ background:#111827; color:#fff; }
     .btn-secondary{ background: rgba(255,255,255,0.95); color:#111827; border-color: rgba(255,255,255,0.4); }
 
-    /* ===== STATS STRIP ===== */
-    .stats-strip{
-      background:#ffffff;
-      padding: 34px 0;
-    }
-    .stats-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 24px;
-      text-align:center;
-    }
-    .stat-number{
-      font-size: 2rem;
-      font-weight: 800;
-      color:#0f172a;
-      display:block;
-      letter-spacing: -0.02em;
-    }
-    .stat-label{
-      font-size: .95rem;
-      color:#475569;
-    }
+   /* ===== STATS STRIP (PREMIUM) ===== */
+.stats-strip{
+  background: transparent;
+  padding: 28px 0 10px;
+}
 
+/* La "carte" */
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  text-align:center;
+
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+
+  padding: 18px 12px;
+}
+
+/* Chaque stat */
+.stat{
+  position: relative;
+  padding: 14px 10px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 6px;
+}
+
+/* Trait vertical entre les stats */
+.stat + .stat::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: rgba(15,23,42,0.10);
+}
+
+/* Icône */
+.stat-icon{
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+/* Nombre */
+.stat-number{
+  font-size: 2rem;
+  font-weight: 800;
+  color:#0f172a;
+  display:block;
+  letter-spacing: -0.02em;
+}
+
+/* Label */
+.stat-label{
+  font-size: .95rem;
+  color:#475569;
+}
+
+/* Mobile: passe en 1 colonne + enlève les traits */
+@media (max-width: 768px){
+  .stats-grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+  .stat + .stat::before{
+    display:none;
+  }
+}
+   .stat{
+  transition: transform .2s ease, background .2s ease;
+}
+.stat:hover{
+  transform: translateY(-2px);
+}
     /* ===== WHY US (PREMIUM) ===== */
     .why-us{
       padding: 90px 0;
@@ -783,18 +841,22 @@ section {
 <section class="stats-strip">
   <div class="container stats-grid">
     <div class="stat">
-      <span class="stat-number">40+</span>
-      <span class="stat-label">Athlètes encadrés</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">10</span>
-      <span class="stat-label">Années d’expérience</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">Sport-Études</span>
-      <span class="stat-label">Programme structuré</span>
-    </div>
-  </div>
+  <span class="stat-icon">🏌️‍♂️</span>
+  <span class="stat-number">50+</span>
+  <span class="stat-label">Athlètes encadrés</span>
+</div>
+
+<div class="stat">
+  <span class="stat-icon">⏱️</span>
+  <span class="stat-number">15</span>
+  <span class="stat-label">Années d’expérience</span>
+</div>
+
+<div class="stat">
+  <span class="stat-icon">🎓</span>
+  <span class="stat-number">Sport-Études</span>
+  <span class="stat-label">Programme structuré</span>
+</div>
 </section>
 
 <!-- WHY US -->
