@@ -340,24 +340,7 @@
   }
 }
 </style>
- .nav-cta{
-  margin-left: 14px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  text-decoration:none;
-  font-weight: 700;
-  font-size: .85rem;
-}
-.nav-cta:hover{ background: rgba(255,255,255,0.16); }
-@media (max-width: 768px){ .nav-cta{ margin: 10px 0 0; } }
-  <style>
+
 /* ... ton CSS actuel ici ... */
 
 /* Sous-sections programmes */
@@ -846,7 +829,6 @@ section {
         <li><a href="evaluations-fitting.html">Evaluations & Fitting</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-     <a class="nav-cta" href="#contact">Évaluation / Inscription</a>
     </nav>
   </div>
 </header>
@@ -994,83 +976,54 @@ section {
 
 <!-- PROGRAMMES + CAMPS + SERVICES -->
 <!-- PROGRAMMES + CAMPS + SERVICES -->
-<section id="programmes" class="programmes-section">
+<section id="programmes" class="programmes-section programmes-home">
   <h2>Programmes</h2>
   <p class="section-subtitle">
-    Du primaire aux adultes — un parcours complet et structuré pour développer le plein potentiel de chaque golfeur.
+    Un parcours complet — du primaire aux athlètes élite et adultes — avec structure, suivi et performance.
   </p>
 
-  <div class="programmes-grid">
+  <div class="programmes-cards">
 
-    <!-- Colonne 1 -->
-    <div class="programmes-column">
-      <h3>Programmes</h3>
+    <a class="programme-card" href="programme-primaire.html">
+      <span class="pc-title">Sport-étude primaire</span>
+      <span class="pc-desc">Bases motrices, plaisir, technique adaptée et habitudes d’entraînement.</span>
+      <span class="pc-tag">Fondations</span>
+    </a>
 
-      <a class="programme-item" href="programme-primaire.html">
-        <span class="programme-title">Sport-étude primaire</span>
-        <span class="programme-desc">Découverte du golf avec des bases techniques solides et adaptées à l’âge.</span>
-      </a>
+    <a class="programme-card" href="programme-secondaire.html">
+      <span class="pc-title">Sport-étude secondaire</span>
+      <span class="pc-desc">Technique + physique + mental + stats pour progresser rapidement.</span>
+      <span class="pc-tag">Progression</span>
+    </a>
 
-      <a class="programme-item" href="#">
-        <span class="programme-title">Sport-étude secondaire</span>
-        <span class="programme-desc">Développement structuré : technique, préparation physique et discipline d’entraînement.</span>
-      </a>
+    <a class="programme-card" href="elite-haute-performance.html">
+      <span class="pc-title">Élite / Haute performance</span>
+      <span class="pc-desc">Plan annuel, suivi compétition, objectifs de performance, encadrement complet.</span>
+      <span class="pc-tag">Performance</span>
+    </a>
 
-      <a class="programme-item" href="#">
-        <span class="programme-title">Sport-étude Cégep (à venir)</span>
-        <span class="programme-desc">Encadrement élite pour soutenir la transition vers le haut niveau.</span>
-      </a>
+    <a class="programme-card" href="programme-vip.html">
+      <span class="pc-title">VIP Adultes (12 places)</span>
+      <span class="pc-desc">Même rigueur qu’un athlète : bilan, plan, suivi et optimisation.</span>
+      <span class="pc-tag">VIP</span>
+    </a>
 
-      <a class="programme-item" href="#">
-        <span class="programme-title">VIP Adultes – 12 places</span>
-        <span class="programme-desc">Accompagnement personnalisé avec analyse et plan de progression continue.</span>
-      </a>
+    <a class="programme-card" href="evaluation-complete.html">
+      <span class="pc-title">Évaluation complète</span>
+      <span class="pc-desc">Bilan technique/physique/mental + priorités claires + plan d’action.</span>
+      <span class="pc-tag">Diagnostic</span>
+    </a>
 
-      <h3>Camps de golf</h3>
+    <a class="programme-card" href="camps.html">
+      <span class="pc-title">Camps (Floride / Québec)</span>
+      <span class="pc-desc">Fondations, validation en compétition, routines et progression accélérée.</span>
+      <span class="pc-tag">Camps</span>
+    </a>
 
-      <a class="programme-item" href="#">
-        <span class="programme-title">Camps courts</span>
-        <span class="programme-desc">Camp intensif pour valider les fondations techniques et mentales avant la saison.</span>
-      </a>
+  </div>
 
-      <a class="programme-item" href="#">
-        <span class="programme-title">Camp parent/enfant</span>
-        <span class="programme-desc">Une expérience en duo pour apprendre, performer et renforcer les liens.</span>
-      </a>
-
-      <a class="programme-item" href="#">
-        <span class="programme-title">Camp long</span>
-        <span class="programme-desc">Développement complet avec compétitions intégrées et objectifs de performance.</span>
-      </a>
-    </div>
-
-    <!-- Colonne 2 -->
-    <div class="programmes-column">
-      <h3>Élite Royal Québec</h3>
-
-      <a class="programme-item" href="#">
-        <span class="programme-title">Programme haute performance</span>
-        <span class="programme-desc">Analyse avancée, plan annuel structuré et suivi en compétition pour viser l’excellence.</span>
-      </a>
-
-      <h3>Évaluations & services</h3>
-
-      <a class="programme-item" href="#">
-        <span class="programme-title">Évaluation complète</span>
-        <span class="programme-desc">Analyse technique, physique et mentale pour identifier les priorités de développement.</span>
-      </a>
-
-      <a class="programme-item" href="#">
-        <span class="programme-title">Fitting de bâtons</span>
-        <span class="programme-desc">Optimisation de l’équipement selon ton style de jeu, ta vitesse et tes données.</span>
-      </a>
-
-      <a class="programme-item" href="#">
-        <span class="programme-title">Réparation de bâtons</span>
-        <span class="programme-desc">Service rapide et professionnel pour garder ton matériel performant toute l’année.</span>
-      </a>
-    </div>
-
+  <div class="programmes-home-cta">
+    <a class="btn btn-primary" href="programmes.html">Voir tous les programmes</a>
   </div>
 </section>
     <!-- Sous-sections des Programmes -->
