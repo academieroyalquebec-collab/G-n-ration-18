@@ -2,177 +2,186 @@
 <html lang="fr">
  <head>
   <meta charset="UTF-8">
-  <title>Génération 18</title>
-  /* ===== STATS STRIP ===== */
-.stats-strip{
-  background:#ffffff;
-  padding: 40px 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Génération 18 – Pré-lancement</title>
 
-.stats-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
-  text-align:center;
-}
+  <style>
+    /* ===== RESET / BASE ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    main { padding: 32px 0 48px; }
+    section { margin-bottom: 44px; }
 
-.stat-number{
-  font-size: 2rem;
-  font-weight: 700;
-  color:#0f172a;
-  display:block;
-}
+    /* ===== HEADER / NAV ===== */
+    header {
+      background: #111827; color: #f9fafb;
+      padding: 12px 24px; position: sticky; top: 0; z-index: 10;
+    }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .brand { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    nav ul { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: #e5e7eb; text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { text-decoration: underline; }
 
-.stat-label{
-  font-size: .95rem;
-  color:#475569;
-}
+    /* ===== HERO (CLEAN + PREMIUM) ===== */
+    .hero{
+      position: relative;
+      padding: 120px 8% 90px;
+      min-height: 70vh;
+      background-image: url("kevin%20Bergeron/6b2d3ba8d5ded299d44be018a1f201bd.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* ===== WHY US (PREMIUM) ===== */
-.why-us{
-  padding: 90px 0;
-  background:#f5f5f5;
-}
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(0,0,0,0.58);
+      z-index: 1;
+    }
+    .hero > .container{
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
+    }
+    .hero-title{
+      color: #fff;
+      font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    }
+    .hero-subtitle{
+      color: #ffffff !important;
+      opacity: 1 !important;
+      font-size: clamp(1rem, 1.35vw, 1.15rem);
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 26px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+    }
 
-.why-header{
-  text-align:center;
-  margin-bottom:42px;
-}
+    .hero-actions{
+      display:flex;
+      gap: 16px;
+      align-items:center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .hero-actions a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height: 48px;
+      padding: 0 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+      border-radius: 999px;
+      text-decoration:none;
+      border: 1px solid transparent;
+    }
+    .btn-primary{ background:#111827; color:#fff; }
+    .btn-secondary{ background: rgba(255,255,255,0.95); color:#111827; border-color: rgba(255,255,255,0.4); }
 
-.why-header h2{
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  color:#0f172a;
-  margin-bottom:10px;
-}
+    /* ===== STATS STRIP ===== */
+    .stats-strip{
+      background:#ffffff;
+      padding: 34px 0;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      text-align:center;
+    }
+    .stat-number{
+      font-size: 2rem;
+      font-weight: 800;
+      color:#0f172a;
+      display:block;
+      letter-spacing: -0.02em;
+    }
+    .stat-label{
+      font-size: .95rem;
+      color:#475569;
+    }
 
-.why-subtitle{
-  max-width:720px;
-  margin:0 auto;
-  color:#475569;
-  line-height:1.6;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:24px;
-}
-
-.why-card{
-  background:#ffffff;
-  border-radius:18px;
-  padding:26px 24px;
-  box-shadow:0 14px 40px rgba(0,0,0,.06);
-  transition:.25s ease;
-}
-
-.why-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 22px 60px rgba(0,0,0,.1);
-}
-
-.why-card h3{
-  color:#0f172a;
-  margin-bottom:10px;
-}
-
-.why-card p{
-  color:#475569;
-  line-height:1.6;
-}
-
-.why-proof{
-  margin-top:34px;
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.why-proof span{
-  background:rgba(15,23,42,.06);
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:600;
-}
-<style>
-  /* ===== WHY US (PREMIUM) ===== */
-.why-us{
-  padding: 90px 0;
-  background: #f5f5f5;
-}
-
-.why-header{
-  text-align:center;
-  margin-bottom: 42px;
-}
-
-.why-header h2{
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  color:#0f172a;
-  margin: 0 0 10px;
-}
-
-.why-subtitle{
-  max-width: 720px;
-  margin: 0 auto;
-  color:#475569;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-}
-
-.why-card{
-  background:#fff;
-  border-radius: 18px;
-  padding: 26px 24px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
-  border: 1px solid rgba(15,23,42,0.06);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.why-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.10);
-}
-
-.why-card h3{
-  margin: 0 0 10px;
-  font-size: 1.05rem;
-  color:#0f172a;
-}
-
-.why-card p{
-  margin: 0;
-  color:#475569;
-  font-size: .95rem;
-  line-height: 1.65;
-}
-
-.why-proof{
-  margin-top: 34px;
-  display:flex;
-  gap: 14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.why-proof span{
-  background: rgba(15,23,42,0.06);
-  color:#0f172a;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: .9rem;
-}
+    /* ===== WHY US (PREMIUM) ===== */
+    .why-us{
+      padding: 90px 0;
+      background:#f5f5f5;
+    }
+    .why-header{
+      text-align:center;
+      margin-bottom:42px;
+    }
+    .why-header h2{
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      color:#0f172a;
+      margin: 0 0 10px;
+    }
+    .why-subtitle{
+      max-width:720px;
+      margin:0 auto;
+      color:#475569;
+      font-size: 1rem;
+      line-height:1.6;
+    }
+    .why-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:24px;
+    }
+    .why-card{
+      background:#ffffff;
+      border-radius:18px;
+      padding:26px 24px;
+      box-shadow:0 14px 40px rgba(0,0,0,.06);
+      border: 1px solid rgba(15,23,42,0.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .why-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 22px 60px rgba(0,0,0,.10);
+    }
+    .why-card h3{
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      color:#0f172a;
+    }
+    .why-card p{
+      margin:0;
+      color:#475569;
+      font-size: .95rem;
+      line-height:1.65;
+    }
+    .why-proof{
+      margin-top:34px;
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .why-proof span{
+      background:rgba(15,23,42,.06);
+      color:#0f172a;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      font-size: .9rem;
+    }
   </style>
 </head>
-
+  
   <style>
 /* Section globale */
 .programmes-section {
@@ -726,31 +735,32 @@ section {
     </p>
 
     <div class="hero-actions">
-  <a href="#contact" class="btn btn-primary">Parler avec Kevin</a>
-  <a href="#programmes" class="btn btn-secondary">Découvrir les programmes</a>
+      <a href="#contact" class="btn-primary">Parler avec Kevin</a>
+      <a href="#programmes" class="btn-secondary">Découvrir les programmes</a>
     </div>
-   </section> <!-- FIN HERO -->
+  </div>
+</section>
+
+<!-- STATS STRIP -->
 <section class="stats-strip">
   <div class="container stats-grid">
-
     <div class="stat">
       <span class="stat-number">40+</span>
       <span class="stat-label">Athlètes encadrés</span>
     </div>
-
     <div class="stat">
       <span class="stat-number">10</span>
       <span class="stat-label">Années d’expérience</span>
     </div>
-
     <div class="stat">
       <span class="stat-number">Sport-Études</span>
       <span class="stat-label">Programme structuré</span>
     </div>
-
   </div>
 </section>
- <section class="why-us">
+
+<!-- WHY US -->
+<section class="why-us">
   <div class="container">
 
     <div class="why-header">
