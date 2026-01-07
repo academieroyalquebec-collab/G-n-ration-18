@@ -638,6 +638,28 @@ body { overflow-x: hidden; }
     nav ul { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
     nav a { color: #e5e7eb; text-decoration: none; font-size: 0.9rem; }
     nav a:hover { text-decoration: underline; }
+   /* ===== NAV CTA ===== */
+.nav-cta{
+  margin-left: 14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  text-decoration:none;
+  font-weight: 700;
+  font-size: .85rem;
+}
+.nav-cta:hover{
+  background: rgba(255,255,255,0.16);
+}
+@media (max-width: 768px){
+  .nav-cta{ margin: 10px 0 0; }
+}
 
     main { padding: 32px 0 48px; }
 /* === AJOUT GÉNÉRATION 18 – LOOK PREMIUM === */
