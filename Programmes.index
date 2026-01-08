@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programmes — Centre Haute Performance Golf</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav-bar">
+    <div class="brand">Centre Haute Performance Golf</div>
+    <nav>
+      <ul>
+        <li><a href="index.html#accueil">Accueil</a></li>
+        <li><a href="index.html#apropos">À propos</a></li>
+        <li><a href="index.html#galerie">Galerie</a></li>
+        <li><a href="index.html#programmes">Programmes</a></li>
+        <li><a href="camps.html">Camps</a></li>
+        <li><a href="evaluations-fitting.html">Évaluations & Fitting</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="page-hero">
+    <h1>Programmes</h1>
+    <p>Un parcours complet — du primaire à l’élite et aux adultes — avec structure, suivi et performance.</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <span class="badge">Fondations</span>
+      <h2>Sport-étude primaire</h2>
+      <p class="section-subtitle">Bases motrices, plaisir, technique adaptée et habitudes d’entraînement.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="programme-primaire.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Inscription</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge">Progression</span>
+      <h2>Sport-étude secondaire</h2>
+      <p class="section-subtitle">Technique + physique + mental + stats pour progresser rapidement.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="programme-secondaire.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Inscription</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge">À venir</span>
+      <h2>Sport-étude Cégep</h2>
+      <p class="section-subtitle">Transition vers la haute performance, planification et compétitions.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="programme-cegep.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Intérêt / liste d’attente</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge">Performance</span>
+      <h2>Élite / Haute performance</h2>
+      <p class="section-subtitle">Plan annuel, suivi compétition, objectifs de performance, encadrement complet.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="elite-haute-performance.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Candidature</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge">VIP</span>
+      <h2>VIP Adultes (12 places)</h2>
+      <p class="section-subtitle">Même rigueur qu’un athlète : bilan, plan, suivi et optimisation.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="programme-vip.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Réserver une place</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="badge">Diagnostic</span>
+      <h2>Évaluation complète</h2>
+      <p class="section-subtitle">Bilan technique/physique/mental + priorités claires + plan d’action.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="evaluation-complete.html">Voir détails</a>
+        <a class="btn btn-secondary" href="index.html#contact">Prendre RDV</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>Centre Haute Performance Golf — Contenu évolutif.</footer>
+</body>
+</html>
