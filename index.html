@@ -552,6 +552,57 @@
   line-height: 1.5;
   color: #444;
 }
+    /* ===== COACHS – EXPERTISE VISIBLE ===== */
+
+.coach-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin: 10px 0 14px;
+}
+
+.coach-tags span{
+  background: rgba(15,23,42,0.06);
+  color:#0f172a;
+  font-size:.75rem;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+.coach-actions{
+  display:flex;
+  gap:10px;
+  margin-top: 8px;
+}
+
+.coach-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:700;
+  text-decoration:none;
+  border:1px solid transparent;
+}
+
+.coach-btn.primary{
+  background:#111827;
+  color:#fff;
+}
+
+.coach-btn.secondary{
+  background: transparent;
+  color:#111827;
+  border-color: rgba(15,23,42,0.2);
+}
+
+.coach-btn.secondary:hover{
+  background: rgba(15,23,42,0.05);
+}
 
 /* Installations & technologies */
 .install-section {
@@ -1331,40 +1382,68 @@ section {
 <section id="coachs" class="coach-section">
   <h2>Les coachs & spécialistes</h2>
   <p class="section-subtitle">
-    Une équipe complémentaire pour encadrer les athlètes sur le plan technique, mental, physique et matériel.
+    Une équipe experte pour encadrer les athlètes sur les plans technique, mental, physique et matériel.
   </p>
 
   <div class="coach-container">
 
-    <div class="coach-card">
+    <!-- COACH 1 -->
+    <div class="coach-card reveal reveal--card">
       <img src="kevin Bergeron/IMG_2170.JPG" alt="Kevin Bergeron">
+
       <h4>Kevin Bergeron</h4>
       <h5>Entraîneur-chef & fondateur</h5>
-      <p>
-        Entraîneur de haut niveau impliqué auprès des athlètes du primaire à l’université. Spécialisé dans le
-        développement à long terme, la planification annuelle et la préparation en compétition.
-      </p>
+
+      <div class="coach-tags">
+        <span>Développement LTAD</span>
+        <span>Coaching compétition</span>
+        <span>Planification annuelle</span>
+      </div>
+
+      <div class="coach-actions">
+        <a href="#apropos" class="coach-btn secondary">Voir la bio</a>
+        <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+      </div>
     </div>
 
-    <div class="coach-card">
-      <img src="images/autre-coach.jpg" alt="Autre coach">
+    <!-- COACH 2 -->
+    <div class="coach-card reveal reveal--card">
+      <img src="images/autre-coach.jpg" alt="Samuel Mathieu">
+
       <h4>Samuel Mathieu</h4>
       <h5>Coach technique & suivi individuel</h5>
-      <p>
-        Responsable du suivi quotidien, des ajustements techniques sur le terrain et du soutien lors des tournois.
-        Approche humaine, structurée et orientée progression.
-      </p>
+
+      <div class="coach-tags">
+        <span>Analyse technique</span>
+        <span>Suivi quotidien</span>
+        <span>Optimisation swing</span>
+      </div>
+
+      <div class="coach-actions">
+        <a href="#" class="coach-btn secondary">Voir la bio</a>
+      </div>
     </div>
 
-    <div class="coach-card">
-      <img src="images/fitter.jpg" alt="Responsable Fitting">
+    <!-- COACH 3 -->
+    <div class="coach-card reveal reveal--card">
+      <img src="images/fitter.jpg" alt="Pierre Lemay">
+
       <h4>Pierre Lemay</h4>
-      <h5>Responsable Fitting & équipement</h5>
-      <p>
-        Spécialiste de l’équipement et des données de trajectoire. Assure que chaque athlète dispose de bâtons adaptés
-        à son swing, à ses objectifs et à son niveau.
-      </p>
+      <h5>Responsable fitting & équipement</h5>
+
+      <div class="coach-tags">
+        <span>Fitting avancé</span>
+        <span>Réparation de bâtons</span>
+        <span>Optimisation équipement</span>
+      </div>
+
+      <div class="coach-actions">
+        <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+      </div>
     </div>
+
+  </div>
+</section>
 
   </div>
 </section>
