@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Génération 18 – Pré-lancement</title>
@@ -92,113 +92,53 @@
     .btn-primary{ background:#111827; color:#fff; }
     .btn-secondary{ background: rgba(255,255,255,0.95); color:#111827; border-color: rgba(255,255,255,0.4); }
 
-   /* ===== STATS STRIP (PREMIUM) ===== */
-.stats-strip{
-  background: transparent;
-  padding: 28px 0 10px;
-}
-
-/* La "carte" */
-.stats-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  text-align:center;
-
-  background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(15,23,42,0.08);
-  border-radius: 18px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
-
-  padding: 18px 12px;
-}
-
-/* Chaque stat */
-.stat{
-  position: relative;
-  padding: 14px 10px;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  gap: 6px;
-}
-
-/* Trait vertical entre les stats */
-.stat + .stat::before{
-  content:"";
-  position:absolute;
-  left: 0;
-  top: 16px;
-  bottom: 16px;
-  width: 1px;
-  background: rgba(15,23,42,0.10);
-}
-
-/* Icône */
-.stat-icon{
-  font-size: 1.2rem;
-  line-height: 1;
-  opacity: 0.95;
-}
-
-/* Nombre */
-.stat-number{
-  font-size: 2rem;
-  font-weight: 800;
-  color:#0f172a;
-  display:block;
-  letter-spacing: -0.02em;
-}
-
-/* Label */
-.stat-label{
-  font-size: .95rem;
-  color:#475569;
-}
-
-/* Mobile: passe en 1 colonne + enlève les traits */
-@media (max-width: 768px){
-  .stats-grid{
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 14px;
-  }
-  .stat + .stat::before{
-    display:none;
-  }
-}
-   .stat{
-  transition: transform .2s ease, background .2s ease;
-}
-.stat:hover{
-  transform: translateY(-2px);
-}
-    /* ===== WHY US (PREMIUM) ===== */
-    .why-us{
-      padding: 90px 0;
-      background:#f5f5f5;
-    }
-    .why-header{
-      text-align:center;
-      margin-bottom:42px;
-    }
-    .why-header h2{
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
-      color:#0f172a;
-      margin: 0 0 10px;
-    }
-    .why-subtitle{
-      max-width:720px;
-      margin:0 auto;
-      color:#475569;
-      font-size: 1rem;
-      line-height:1.6;
-    }
-    .why-grid{
+    /* ===== STATS STRIP (PREMIUM) ===== */
+    .stats-strip{ background: transparent; padding: 28px 0 10px; }
+    .stats-grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap:24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      text-align:center;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+      padding: 18px 12px;
     }
+    .stat{
+      position: relative;
+      padding: 14px 10px;
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      gap: 6px;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .stat + .stat::before{
+      content:"";
+      position:absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      width: 1px;
+      background: rgba(15,23,42,0.10);
+    }
+    .stat:hover{ transform: translateY(-2px); }
+    .stat-icon{ font-size: 1.2rem; line-height: 1; opacity: 0.95; }
+    .stat-number{ font-size: 2rem; font-weight: 800; color:#0f172a; display:block; letter-spacing: -0.02em; }
+    .stat-label{ font-size: .95rem; color:#475569; }
+
+    @media (max-width: 768px){
+      .stats-grid{ grid-template-columns: 1fr; gap: 10px; padding: 14px; }
+      .stat + .stat::before{ display:none; }
+    }
+
+    /* ===== WHY US (PREMIUM) ===== */
+    .why-us{ padding: 90px 0; background:#f5f5f5; }
+    .why-header{ text-align:center; margin-bottom:42px; }
+    .why-header h2{ font-size: clamp(1.8rem, 3vw, 2.2rem); color:#0f172a; margin: 0 0 10px; }
+    .why-subtitle{ max-width:720px; margin:0 auto; color:#475569; font-size: 1rem; line-height:1.6; }
+    .why-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:24px; }
     .why-card{
       background:#ffffff;
       border-radius:18px;
@@ -207,28 +147,21 @@
       border: 1px solid rgba(15,23,42,0.06);
       transition: transform .25s ease, box-shadow .25s ease;
     }
-    .why-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 22px 60px rgba(0,0,0,.10);
+    .why-card:hover{ transform:translateY(-6px); box-shadow:0 22px 60px rgba(0,0,0,.10); }
+    .why-card h3{ margin: 0 0 10px; font-size: 1.05rem; color:#0f172a; }
+    .why-card p{ margin:0; color:#475569; font-size: .95rem; line-height:1.65; }
+    .why-mini{
+      margin-top: 12px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: #0f172a;
+      background: rgba(15,23,42,0.05);
+      border: 1px solid rgba(15,23,42,0.06);
+      padding: 8px 10px;
+      border-radius: 12px;
+      display: inline-block;
     }
-    .why-card h3{
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-      color:#0f172a;
-    }
-    .why-card p{
-      margin:0;
-      color:#475569;
-      font-size: .95rem;
-      line-height:1.65;
-    }
-    .why-proof{
-      margin-top:34px;
-      display:flex;
-      gap:14px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+    .why-proof{ margin-top:34px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
     .why-proof span{
       background:rgba(15,23,42,.06);
       color:#0f172a;
@@ -237,25 +170,119 @@
       font-weight:700;
       font-size: .9rem;
     }
-   /* Mini preuves dans les cartes */
-.why-mini{
-  margin-top: 12px;
-  font-size: .9rem;
-  font-weight: 600;
-  color: #0f172a;
-  background: rgba(15,23,42,0.05);
-  border: 1px solid rgba(15,23,42,0.06);
-  padding: 8px 10px;
-  border-radius: 12px;
-  display: inline-block;
-}
+    .why-cta{ margin-top: 26px; display:flex; justify-content:center; }
 
-/* CTA sous la section */
-.why-cta{
-  margin-top: 26px;
-  display:flex;
-  justify-content:center;
-}
+    /* ===== PROGRAMMES SECTION ===== */
+    .programmes-section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .programmes-section h2 { text-align: center; font-size: 32px; margin-bottom: 8px; }
+    .programmes-section .section-subtitle { text-align: center; font-size: 15px; max-width: 650px; margin: 0 auto 32px auto; color: #555; }
+
+    .programmes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .programmes-column h3 { font-size: 18px; margin-bottom: 10px; color: #0a4cab; }
+
+    .programme-item{
+      display:block;
+      text-decoration:none;
+      padding:10px 12px;
+      margin-bottom:10px;
+      border-radius:10px;
+      border:1px solid #e0e6f5;
+      background:#f8f9ff;
+      transition:.2s ease;
+    }
+    .programme-title{ display:block; font-weight:600; font-size:15px; color:#0056c8; }
+    .programme-desc{ display:block; margin-top:4px; font-size:13px; line-height:1.35; color:#445; }
+
+    .programme-item:hover{ border-color:#0056c8; background:#ecf2ff; transform: translateY(-1px); }
+    .programme-item:hover .programme-title{ color:#003c8a; }
+
+    @media (max-width: 850px){
+      .programmes-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* ===== PROGRAMMES HOME (6 CARTES) ===== */
+    .programmes-home .programmes-cards{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+    .programme-card{
+      display:block;
+      text-decoration:none;
+      background:#ffffff;
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:16px;
+      padding:18px 18px 16px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.04);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      color:#0f172a;
+    }
+    .programme-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+      border-color: rgba(15,23,42,0.14);
+    }
+    .pc-title{ display:block; font-weight:800; font-size:1.02rem; margin-bottom:8px; }
+    .pc-desc{ display:block; color:#475569; font-size:.95rem; line-height:1.55; margin-bottom:14px; }
+    .pc-tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:28px;
+      padding:0 10px;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:700;
+      background: rgba(15,23,42,0.06);
+      color:#0f172a;
+    }
+    .programmes-home-cta{ margin-top:22px; text-align:center; }
+
+    /* ===== SOUS-SECTIONS PROGRAMMES ===== */
+    .sub-program { max-width: 1000px; margin: 50px auto 0; padding: 24px 0; border-bottom: 1px solid #e0e0e0; }
+    .sub-program h3 { font-size: 22px; margin-bottom: 8px; color: #000; }
+    .sub-program p { margin-bottom: 14px; font-size: 14px; line-height: 1.5; color: #444; }
+
+    .sub-program-content{ display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; }
+    .sub-program-text{ flex: 1 1 260px; }
+    .sub-program-media{ width:260px; flex: 0 0 260px; }
+
+    .sub-program-media img,
+    .sub-program-media iframe{
+      width:100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius:12px;
+      border:1px solid #ddd;
+    }
+
+    /* IMPORTANT: tu as déjà .btn-secondary plus haut pour le hero.
+       Ici je n’écrase pas le style du hero.
+       Si tu veux un bouton "outline bleu" spécifique programmes, crée une classe dédiée. */
+    .btn-outline-blue{
+      display:inline-block;
+      margin-top:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid #0056c8;
+      font-size:13px;
+      text-decoration:none;
+      color:#0056c8;
+      transition:.2s;
+      background: transparent;
+    }
+    .btn-outline-blue:hover{ background:#0056c8; color:#fff; }
+
+    /* Coachs (photos carrées) */
+    .coach-section{ max-width:1100px; margin:70px auto; padding:0 20px; text-align:center; }
+    .coach-section h2{ font-size:28px; margin-bottom:8px; }
+    .coach-section p.section-subtitle{ margin-bottom:28px; }
+    .coach-container{ display:flex; gap:24px; flex-wrap:wrap; justify-content:center; }
+    .coach-card{ width:260px; background:#f8f8f8; padding:16px; border-radius:12px; text-align:left; }
+    .coach-card img{ width:100%; height:260px; object-fit:cover; border-radius:10px; }
+    .coach-card h4{ margin-top:10px; margin-bottom:4px; font-size:18px; color:#000; }
+    .coach-card h5{ margin:0; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:#666; }
   </style>
 </head>
   
