@@ -313,13 +313,13 @@
     .install-card h3 { font-size: 18px; margin-bottom: 6px; color: #000; }
     .install-card p { font-size: 13px; line-height: 1.5; color: #444; }
 
-    /* ===== CARDS / GRID ===== */
-    .card{
-      background: white;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
+  .card{
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  overflow: auto; /* ✅ FIX: contient les images float */
+}
     .grid{ display:grid; gap:16px; }
     .grid-3{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
