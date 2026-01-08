@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Génération 18 – Pré-lancement</title>
 
   <style>
     /* ===== RESET / BASE ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.6; overflow-x: hidden; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #111827;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
     .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
     main { padding: 32px 0 48px; }
     section { margin-bottom: 44px; }
 
     /* ===== HEADER / NAV ===== */
-    header {
+    header{
       background: #111827; color: #f9fafb;
       padding: 12px 24px; position: sticky; top: 0; z-index: 10;
     }
-    .nav-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .brand { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    nav ul { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #e5e7eb; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { text-decoration: underline; }
-
-    /* ===== NAV CTA ===== */
-    .nav-cta{
-      margin-left: 14px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      height: 40px;
-      padding: 0 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
-      text-decoration:none;
-      font-weight: 700;
-      font-size: .85rem;
-    }
-    .nav-cta:hover{ background: rgba(255,255,255,0.16); }
-    @media (max-width: 768px){ .nav-cta{ margin: 10px 0 0; } }
+    .nav-bar{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+    .brand{ font-weight:700; font-size:.9rem; letter-spacing:.05em; text-transform:uppercase; }
+    nav ul{ list-style:none; display:flex; gap:16px; flex-wrap:wrap; }
+    nav a{ color:#e5e7eb; text-decoration:none; font-size:.9rem; }
+    nav a:hover{ text-decoration: underline; }
 
     /* ===== HERO (CLEAN + PREMIUM) ===== */
     .hero{
@@ -52,7 +40,6 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
@@ -86,6 +73,7 @@
       margin-bottom: 26px;
       text-shadow: 0 2px 10px rgba(0,0,0,0.45);
     }
+
     .hero-actions{
       display:flex;
       gap: 16px;
@@ -108,7 +96,7 @@
       border: 1px solid transparent;
     }
     .btn-primary{ background:#111827; color:#fff; }
-    /* IMPORTANT: on garde .btn-secondary pour ton bouton clair du hero */
+    /* IMPORTANT: .btn-secondary = bouton clair du HERO */
     .btn-secondary{ background: rgba(255,255,255,0.95); color:#111827; border-color: rgba(255,255,255,0.4); }
 
     /* ===== HERO → NEXT SECTION DIVIDER ===== */
@@ -139,7 +127,7 @@
       flex-direction: column;
       align-items:center;
       gap: 6px;
-      transition: transform .2s ease, background .2s ease;
+      transition: transform .2s ease;
     }
     .stat + .stat::before{
       content:"";
@@ -151,7 +139,6 @@
       background: rgba(15,23,42,0.10);
     }
     .stat:hover{ transform: translateY(-2px); }
-    .stat-icon{ font-size: 1.2rem; line-height: 1; opacity: 0.95; }
     .stat-number{ font-size: 2rem; font-weight: 800; color:#0f172a; display:block; letter-spacing: -0.02em; }
     .stat-label{ font-size: .95rem; color:#475569; }
     @media (max-width: 768px){
@@ -187,18 +174,42 @@
       border-radius: 12px;
       display: inline-block;
     }
-    .why-proof{ margin-top:34px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-    .why-proof span{
-      background:rgba(15,23,42,.06);
-      color:#0f172a;
-      padding:10px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size: .9rem;
+
+    /* ===== UI BUTTONS (GENERIC) ===== */
+    .btn{
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
     }
-    .why-cta{ margin-top: 26px; display:flex; justify-content:center; }
+
+    /* Bouton outline bleu (pages détaillées) */
+    .btn-outline-blue{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid #0056c8;
+      font-size:13px;
+      text-decoration:none;
+      color:#0056c8;
+      transition:.2s;
+      background: transparent;
+    }
+    .btn-outline-blue:hover{ background:#0056c8; color:#fff; }
 
     /* ===== PROGRAMMES HOME (6 CARTES) ===== */
+    .programmes-section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .programmes-section h2 { text-align: center; font-size: 32px; margin-bottom: 8px; }
+    .programmes-section .section-subtitle { text-align: center; font-size: 15px; max-width: 650px; margin: 0 auto 32px auto; color: #555; }
+
     .programmes-home .programmes-cards{
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -253,21 +264,6 @@
       border:1px solid #ddd;
     }
 
-    /* Bouton outline bleu pour les pages programmes */
-    .btn-outline-blue{
-      display:inline-block;
-      margin-top:8px;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid #0056c8;
-      font-size:13px;
-      text-decoration:none;
-      color:#0056c8;
-      transition:.2s;
-      background: transparent;
-    }
-    .btn-outline-blue:hover{ background:#0056c8; color:#fff; }
-
     /* ===== COACHS ===== */
     .coach-section{ max-width:1100px; margin:70px auto; padding:0 20px; text-align:center; }
     .coach-section h2{ font-size:28px; margin-bottom:8px; }
@@ -277,9 +273,7 @@
     .coach-card img{ width:100%; height:260px; object-fit:cover; border-radius:10px; }
     .coach-card h4{ margin-top:10px; margin-bottom:4px; font-size:18px; color:#000; }
     .coach-card h5{ margin:0; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:#666; }
-    .coach-card p{ margin-top:8px; font-size:13px; line-height:1.5; color:#444; }
 
-    /* ===== COACHS – EXPERTISE VISIBLE ===== */
     .coach-tags{ display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 14px; }
     .coach-tags span{
       background: rgba(15,23,42,0.06);
@@ -319,6 +313,23 @@
     .install-card h3 { font-size: 18px; margin-bottom: 6px; color: #000; }
     .install-card p { font-size: 13px; line-height: 1.5; color: #444; }
 
+    /* ===== CARDS / GRID ===== */
+    .card{
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .grid{ display:grid; gap:16px; }
+    .grid-3{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+    footer{
+      padding: 24px 0;
+      text-align:center;
+      font-size: .8rem;
+      color:#6b7280;
+    }
+
     /* ===== REVEAL ANIMATION ===== */
     .reveal{
       opacity: 0;
@@ -337,722 +348,13 @@
       }
     }
 
-    /* Responsive media */
     @media (max-width: 850px){
       .sub-program-content{ flex-direction: column; }
       .sub-program-media{ width: 100%; max-width: 320px; }
     }
-    /* IMPORTANT: tu as déjà .btn-secondary plus haut pour le hero.
-       Ici je n’écrase pas le style du hero.
-       Si tu veux un bouton "outline bleu" spécifique programmes, crée une classe dédiée. */
-    .btn-outline-blue{
-      display:inline-block;
-      margin-top:8px;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid #0056c8;
-      font-size:13px;
-      text-decoration:none;
-      color:#0056c8;
-      transition:.2s;
-      background: transparent;
-    }
-    .btn-outline-blue:hover{ background:#0056c8; color:#fff; }
-
-    /* Coachs (photos carrées) */
-    .coach-section{ max-width:1100px; margin:70px auto; padding:0 20px; text-align:center; }
-    .coach-section h2{ font-size:28px; margin-bottom:8px; }
-    .coach-section p.section-subtitle{ margin-bottom:28px; }
-    .coach-container{ display:flex; gap:24px; flex-wrap:wrap; justify-content:center; }
-    .coach-card{ width:260px; background:#f8f8f8; padding:16px; border-radius:12px; text-align:left; }
-    .coach-card img{ width:100%; height:260px; object-fit:cover; border-radius:10px; }
-    .coach-card h4{ margin-top:10px; margin-bottom:4px; font-size:18px; color:#000; }
-    .coach-card h5{ margin:0; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:#666; }
-    /* Section globale */
-.programmes-section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.programmes-section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 8px;
-}
-
-.programmes-section .section-subtitle {
-  text-align: center;
-  font-size: 15px;
-  max-width: 650px;
-  margin: 0 auto 32px auto;
-  color: #555;
-}
-
-/* Grille 2 colonnes */
-.programmes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-/* Titres de blocs */
-.programmes-column h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #0a4cab;
-}
-
-/* Item programme */
-.programme-item {
-  display: block;
-  text-decoration: none;
-  padding: 10px 12px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  border: 1px solid #e0e6f5;
-  background: #f8f9ff;
-  transition: 0.2s ease;
-}
-
-.programme-title {
-  display: block;
-  font-weight: 600;
-  font-size: 15px;
-  color: #0056c8;
-}
-
-.programme-desc {
-  display: block;
-  margin-top: 4px;
-  font-size: 13px;
-  line-height: 1.35;
-  color: #445;
-}
-
-/* Hover state */
-.programme-item:hover {
-  border-color: #0056c8;
-  background: #ecf2ff;
-  transform: translateY(-1px);
-}
-
-.programme-item:hover .programme-title {
-  color: #003c8a;
-}
-
-/* Responsive mobile */
-@media (max-width: 850px) {
-  .programmes-grid {
-    grid-template-columns: 1fr;
-  }
-}
-   /* ===== PROGRAMMES HOME (6 CARTES) ===== */
-.programmes-home .programmes-cards{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin-top: 22px;
-}
-
-.programme-card{
-  display: block;
-  text-decoration: none;
-  background: #ffffff;
-  border: 1px solid rgba(15,23,42,0.08);
-  border-radius: 16px;
-  padding: 18px 18px 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
-  color: #0f172a;
-}
-
-.programme-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.08);
-  border-color: rgba(15,23,42,0.14);
-}
-
-.pc-title{
-  display:block;
-  font-weight: 800;
-  font-size: 1.02rem;
-  margin-bottom: 8px;
-}
-
-.pc-desc{
-  display:block;
-  color: #475569;
-  font-size: .95rem;
-  line-height: 1.55;
-  margin-bottom: 14px;
-}
-
-.pc-tag{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 28px;
-  padding: 0 10px;
-  border-radius: 999px;
-  font-size: .82rem;
-  font-weight: 700;
-  background: rgba(15,23,42,0.06);
-  color: #0f172a;
-}
-
-.programmes-home-cta{
-  margin-top: 22px;
-  text-align: center;
-}
-  
-/* ... ton CSS actuel ici ... */
-
-/* Sous-sections programmes */
-.sub-program {
-  max-width: 1000px;
-  margin: 50px auto 0 auto;
-  padding: 24px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.sub-program h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-  color: #000;
-}
-
-.sub-program p {
-  margin-bottom: 14px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #444;
-}
-
-.sub-program-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-.sub-program-text {
-  flex: 1 1 260px;
-}
-
-.sub-program-media {
-  width: 260px;
-  flex: 0 0 260px;
-}
-
-.sub-program-media img,
-.sub-program-media iframe {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-}
-
-/* Bouton pour page détaillée */
-.btn-secondary {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid #0056c8;
-  font-size: 13px;
-  text-decoration: none;
-  color: #0056c8;
-  transition: 0.2s;
-}
-
-.btn-secondary:hover {
-  background: #0056c8;
-  color: #fff;
-}
-
-/* Coachs (photos carrées) */
-.coach-section {
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.coach-section h2 {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.coach-section p.section-subtitle {
-  margin-bottom: 28px;
-}
-
-.coach-container {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.coach-card {
-  width: 260px;
-  background: #f8f8f8;
-  padding: 16px;
-  border-radius: 12px;
-  text-align: left;
-}
-
-.coach-card img {
-  width: 100%;
-  height: 260px; /* carré */
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.coach-card h4 {
-  margin-top: 10px;
-  margin-bottom: 4px;
-  font-size: 18px;
-  color: #000;
-}
-
-.coach-card h5 {
-  margin: 0;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #666;
-}
-
-.coach-card p {
-  margin-top: 8px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #444;
-}
-    /* ===== COACHS – EXPERTISE VISIBLE ===== */
-
-.coach-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin: 10px 0 14px;
-}
-
-.coach-tags span{
-  background: rgba(15,23,42,0.06);
-  color:#0f172a;
-  font-size:.75rem;
-  font-weight:700;
-  padding:6px 10px;
-  border-radius:999px;
-}
-
-.coach-actions{
-  display:flex;
-  gap:10px;
-  margin-top: 8px;
-}
-
-.coach-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 34px;
-  padding: 0 14px;
-  border-radius:999px;
-  font-size:.8rem;
-  font-weight:700;
-  text-decoration:none;
-  border:1px solid transparent;
-}
-
-.coach-btn.primary{
-  background:#111827;
-  color:#fff;
-}
-
-.coach-btn.secondary{
-  background: transparent;
-  color:#111827;
-  border-color: rgba(15,23,42,0.2);
-}
-
-.coach-btn.secondary:hover{
-  background: rgba(15,23,42,0.05);
-}
-
-/* Installations & technologies */
-.install-section {
-  max-width: 1100px;
-  margin: 70px auto 40px auto;
-  padding: 0 20px 40px 20px;
-}
-
-.install-section h2 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.install-section p.section-subtitle {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.install-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-.install-card {
-  background: #f8f9ff;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.install-card h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
-  color: #000;
-}
-
-.install-card p {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #444;
-}
-
-/* Responsive */
-@media (max-width: 850px) {
-  .sub-program-content {
-    flex-direction: column;
-  }
-
-  .sub-program-media {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-   /* ===== REVEAL ANIMATION (PREMIUM) ===== */
-.reveal{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .6s ease, transform .6s ease;
-  will-change: opacity, transform;
-}
-
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Petite variation pour cartes */
-.reveal--card{
-  transform: translateY(14px) scale(0.99);
-}
-
-.reveal--card.is-visible{
-  transform: translateY(0) scale(1);
-}
-
-/* Respect accessibilité */
-@media (prefers-reduced-motion: reduce){
-  .reveal, .reveal--card{
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
-    
-   /* ===== HERO → NEXT SECTION DIVIDER ===== */
-.hero-divider{
-  height: 36px;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(17,24,39,0.0), rgba(17,24,39,0.06), rgba(245,245,245,1));
-  margin-top: -24px; /* colle visuellement au hero */
-}
-</style>
-</head>
-
-  <meta charset="UTF-8">
-  <title>Génération 18 – Pré-lancement</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.6; }
-body { overflow-x: hidden; }
-    header {
-      background: #111827; color: #f9fafb;
-      padding: 12px 24px; position: sticky; top: 0; z-index: 10;
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-    .nav-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .brand { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; }
-
-    nav ul { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
-    nav a { color: #e5e7eb; text-decoration: none; font-size: 0.9rem; }
-    nav a:hover { text-decoration: underline; }
-   /* ===== NAV CTA ===== */
-.nav-cta{
-  margin-left: 14px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  text-decoration:none;
-  font-weight: 700;
-  font-size: .85rem;
-}
-.nav-cta:hover{
-  background: rgba(255,255,255,0.16);
-}
-@media (max-width: 768px){
-  .nav-cta{ margin: 10px 0 0; }
-}
-
-    main { padding: 32px 0 48px; }
-/* === AJOUT GÉNÉRATION 18 – LOOK PREMIUM === */
-
-:root {
-  --gold: #C8A24D;
-}
-
-/* Plus de respiration entre les sections (style PopStroke) */
-section {
-  padding: 100px 8%;
-}
-
-/* Sous-titre du hero */
-.hero-subtitle{
-  color: rgba(255,255,255,0.92);
-  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
-}
-
-/* Bouton principal */
-.cta-primary {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 34px;
-  border: 2px solid var(--gold);
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-radius: 999px;
-  transition: 0.25s ease;
-}
-
-.cta-primary:hover {
-  background: var(--gold);
-  color: #111;
-}
- .hero{
-  position: relative;
-  padding: 120px 8% 90px;
-  min-height: 70vh;
-  margin-bottom: 48px;
-
-  /* BANNIÈRE PHOTO (EN HAUT SEULEMENT) */
-  background-image: url("kevin Bergeron/6b2d3ba8d5ded299d44be018a1f201bd.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-     /* FULL BLEED (enlève le blanc sur les côtés) */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-/* HERO IMAGE OVERLAY */
-.hero {
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-/* CONTENU AU-DESSUS DE L’IMAGE */
-.hero > div {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-}
-
-/* TITRE */
-.hero-title {
-  color: #ffffff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.45);
-}
-
-/* SOUS-TITRE (LE GRIS PROBLÉMATIQUE) */
-.hero-subtitle {
-  color: #ffffff;        /* ← BLANC */
-  opacity: 1;            /* ← PAS TRANSPARENT */
-  font-size: 1.05rem;
-  line-height: 1.6;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
-}
-
-  /* IMAGE DE FOND */
-  background-image: url("hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 80vh;
-  padding: 120px 8%;
-}
-    .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-}
-
-.hero > div {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-}
-    .hero-title,
-.hero-subtitle {
-  color: #ffffff;
-}
-    .hero-title { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
-    .hero-subtitle { font-size: 1.05rem; color: #4b5563; margin-bottom: 20px; }
-
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn {
-      padding: 10px 18px; border-radius: 999px;
-      font-size: 0.9rem; text-decoration: none; display: inline-block;
-    }
-    .btn-primary { background: #111827; color: #fff; }
-    .btn-secondary { background: #fff; color: #111827; border: 1px solid #d1d5db; }
-
-    section { margin-bottom: 44px; }
-    h2 { font-size: 1.4rem; margin-bottom: 12px; }
-    .section-subtitle { color: #6b7280; margin-bottom: 16px; }
-
-    .card {
-      background: white; padding: 16px; border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    }
-
-    .grid { display: grid; gap: 16px; }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-
-    footer {
-      padding: 24px 0; text-align: center;
-      font-size: 0.8rem; color: #6b7280;
-    }
-
-    @media(max-width: 768px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero img { max-height: 350px; object-fit: cover; }
-    }
-    /* FIX FINAL TEXTE HERO */
-.hero .hero-subtitle {
-  color: #ffffff !important;
-  opacity: 1 !important;
-}
-    /* ===== HERO BUTTONS – BASE COMMUNE ===== */
-.hero-actions{
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-/* BASE COMMUNE AUX DEUX BOUTONS */
-.hero-actions a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 48px;
-  padding: 0 20px;
-
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1px solid transparent;
-}
-
-/* BOUTON PRINCIPAL */
-.btn-primary{
-  background: #111827;
-  color: #ffffff;
-}
-
-/* BOUTON SECONDAIRE */
-.btn-secondary{
-  background: rgba(255,255,255,0.95);
-  color: #111827;
-  border-color: rgba(255,255,255,0.4);
-}
-    .hero > div {
-  max-width: 560px; /* PLUS ÉTROIT = PLUS PREMIUM */
-}
-
-.hero-title {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  line-height: 1.15;
-  margin-bottom: 16px;
-}
-
-.hero-subtitle {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 520px;
-  opacity: 0.95;
-  margin-bottom: 28px;
-}
-   /* ===== HERO – RESPIRATION PREMIUM ===== */
-.hero > div{
-  max-width: 560px;            /* bloc texte + étroit = plus premium */
-}
-
-.hero-title{
-  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-
-.hero-subtitle{
-  color: #ffffff;              /* forcer blanc */
-  opacity: 1;                  /* PAS transparent */
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.65;
-  max-width: 520px;
-  margin-bottom: 26px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.45);
-}
-
-.hero-actions{
-  margin-top: 4px;
-}
   </style>
 </head>
+
 <body>
 
 <header>
@@ -1075,94 +377,99 @@ section {
 <main class="container">
 
   <!-- HERO -->
-<section class="hero" id="accueil">
-  <div class="container">
-    <h1 class="hero-title">
-      Développer les compétences.<br>
-      Cultiver la confiance.<br>
-      Former des humains d’exception.
-    </h1>
+  <section class="hero reveal" id="accueil">
+    <div class="container">
+      <h1 class="hero-title">
+        Développer les compétences.<br>
+        Cultiver la confiance.<br>
+        Former des humains d’exception.
+      </h1>
 
-    <p class="hero-subtitle">
-      Un environnement humain, structuré et inspirant pour accompagner chaque athlète vers sa meilleure performance.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Parler avec Kevin</a>
-      <a href="#programmes" class="btn-secondary">Découvrir les programmes</a>
-    </div>
-  </div>
-</section>
- <div class="hero-divider" aria-hidden="true"></div>
-
-<!-- STATS STRIP -->
-<section class="stats-strip">
-  <div class="container stats-grid">
-    <div class="stat">
-  <span class="stat-number">50+</span>
-  <span class="stat-label">Athlètes encadrés</span>
-</div>
-
-<div class="stat">
-  <span class="stat-number">15</span>
-  <span class="stat-label">Années d’expérience</span>
-</div>
-
-<div class="stat">
-  <span class="stat-number">Sport-Études</span>
-  <span class="stat-label">Programme structuré</span>
-</div>
-</section>
-
-<!-- WHY US -->
-<section class="why-us">
-  <div class="container">
-
-    <div class="why-header">
-      <h2>Pourquoi Génération 18</h2>
-      <p class="why-subtitle">
-        Une structure claire, humaine et mesurable — inspirée des meilleures académies.
+      <p class="hero-subtitle">
+        Un environnement humain, structuré et inspirant pour accompagner chaque athlète vers sa meilleure performance.
       </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Parler avec Kevin</a>
+        <a href="#programmes" class="btn-secondary">Découvrir les programmes</a>
+      </div>
     </div>
+  </section>
 
-    <div class="why-grid">
-   <div class="why-card">
-  <h3>Plan de développement individuel</h3>
-  <p>Chaque athlète suit un plan clair, évolutif et mesurable selon son âge, son niveau et ses objectifs.</p>
-  <div class="why-mini"> Plan mis à jour mensuellement</div>
-</div>
+  <div class="hero-divider" aria-hidden="true"></div>
 
-<div class="why-card">
-  <h3>Suivi statistiques & compétition</h3>
-  <p>Analyse de performance, bilans réguliers et accompagnement en tournoi pour transformer l’entraînement en résultats.</p>
-  <div class="why-mini"> Strokes Gained + bilans</div>
-</div>
+  <!-- STATS STRIP -->
+  <section class="stats-strip reveal">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Athlètes encadrés</span>
+      </div>
 
-<div class="why-card">
-  <h3>Encadrement technique, mental et physique</h3>
-  <p>Une approche complète intégrant technique de golf, préparation mentale et développement physique.</p>
-  <div class="why-mini"> Routines + séances structurées</div>
-</div>
+      <div class="stat">
+        <span class="stat-number">15</span>
+        <span class="stat-label">Années d’expérience</span>
+      </div>
 
-<div class="why-card">
-  <h3>Structure sport-études & élite</h3>
-  <p>Un environnement structuré inspiré des meilleures académies pour soutenir la progression à long terme.</p>
-  <div class="why-mini"> TPI + 3D + objectifs</div>
-</div>
-  </div>   
-</section>
-  
+      <div class="stat">
+        <span class="stat-number">Sport-Études</span>
+        <span class="stat-label">Programme structuré</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us reveal">
+    <div class="container">
+
+      <div class="why-header">
+        <h2>Pourquoi Génération 18</h2>
+        <p class="why-subtitle">
+          Une structure claire, humaine et mesurable — inspirée des meilleures académies.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal reveal--card">
+          <h3>Plan de développement individuel</h3>
+          <p>Chaque athlète suit un plan clair, évolutif et mesurable selon son âge, son niveau et ses objectifs.</p>
+          <div class="why-mini">Plan mis à jour mensuellement</div>
+        </div>
+
+        <div class="why-card reveal reveal--card">
+          <h3>Suivi statistiques & compétition</h3>
+          <p>Analyse de performance, bilans réguliers et accompagnement en tournoi pour transformer l’entraînement en résultats.</p>
+          <div class="why-mini">Strokes Gained + bilans</div>
+        </div>
+
+        <div class="why-card reveal reveal--card">
+          <h3>Encadrement technique, mental et physique</h3>
+          <p>Une approche complète intégrant technique de golf, préparation mentale et développement physique.</p>
+          <div class="why-mini">Routines + séances structurées</div>
+        </div>
+
+        <div class="why-card reveal reveal--card">
+          <h3>Structure sport-études & élite</h3>
+          <p>Un environnement structuré inspiré des meilleures académies pour soutenir la progression à long terme.</p>
+          <div class="why-mini">TPI + 3D + objectifs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- A PROPOS -->
-  <section id="apropos">
+  <section id="apropos" class="reveal">
     <h2>À propos</h2>
     <p class="section-subtitle">Une approche humaine, exigeante et orientée vers le long terme.</p>
 
-    <!-- PHOTO CARRÉ -->
-    <img src="kevin Bergeron/IMG_2170.JPG"
-         alt="Séance de coaching de golf"
-         style="width:220px; height:220px; border-radius:12px; float:right; margin-left:18px; margin-bottom:10px; object-fit:cover;"
+    <!-- PHOTO CARRÉ (FIX: ajout du > manquant) -->
+    <img
+      src="kevin Bergeron/IMG_2170.JPG"
+      alt="Séance de coaching de golf"
+      style="width:220px; height:220px; border-radius:12px; float:right; margin-left:18px; margin-bottom:10px; object-fit:cover;"
+    />
 
-    <div class="card">
+    <div class="card reveal reveal--card">
       <p>
         Bonjour, je m’appelle Kevin. Depuis plus de 10 ans, j’accompagne des jeunes, des universitaires
         et des adultes dans leur développement golfique et humain. Mon objectif n'a jamais été seulement
@@ -1182,400 +489,274 @@ section {
   </section>
 
   <!-- GALERIE -->
-  <section id="galerie">
+  <section id="galerie" class="reveal">
     <h2>Moments sur le terrain</h2>
     <p class="section-subtitle">L’esprit de travail, de plaisir et d’équipe au cœur de nos programmes.</p>
 
     <div class="grid grid-3">
 
-      <div class="card">
-        <img 
+      <div class="card reveal reveal--card">
+        <img
           src="kevin Bergeron/6b2d3ba8d5ded299d44be018a1f201bd.jpeg"
-             alt="Groupe en Floride"
-             style="width:100%; border-radius:12px; margin-bottom:8px;">
+          alt="Groupe en Floride"
+          style="width:100%; border-radius:12px; margin-bottom:8px;"
+        />
         <p>Camps en Floride – entraînements en conditions réelles.</p>
       </div>
 
-      <div class="card">
-        <img src="kevin Bergeron/IMG_0945.JPG"
-             alt="Équipe de golf avec trophées"
-             style="width:100%; border-radius:12px; margin-bottom:8px;">
+      <div class="card reveal reveal--card">
+        <img
+          src="kevin Bergeron/IMG_0945.JPG"
+          alt="Équipe de golf avec trophées"
+          style="width:100%; border-radius:12px; margin-bottom:8px;"
+        />
         <p>Moments de fierté et accomplissements en compétition.</p>
       </div>
 
-      <div class="card">
-        <img src="kevin Bergeron/IMG_2863.jpg"
-             alt="Selfie équipe sur le green"
-             style="width:100%; border-radius:12px; margin-bottom:8px;">
+      <div class="card reveal reveal--card">
+        <img
+          src="kevin Bergeron/IMG_2863.jpg"
+          alt="Selfie équipe sur le green"
+          style="width:100%; border-radius:12px; margin-bottom:8px;"
+        />
         <p>Une équipe soudée qui progresse ensemble.</p>
       </div>
 
     </div>
   </section>
 
-<!-- PROGRAMMES + CAMPS + SERVICES -->
-<!-- PROGRAMMES + CAMPS + SERVICES -->
-<section id="programmes" class="programmes-section programmes-home">
-  <h2>Programmes</h2>
-  <p class="section-subtitle">
-    Un parcours complet — du primaire aux athlètes élite et adultes — avec structure, suivi et performance.
-  </p>
+  <!-- PROGRAMMES -->
+  <section id="programmes" class="programmes-section programmes-home reveal">
+    <h2>Programmes</h2>
+    <p class="section-subtitle">
+      Un parcours complet — du primaire aux athlètes élite et adultes — avec structure, suivi et performance.
+    </p>
 
-  <div class="programmes-cards">
+    <div class="programmes-cards">
 
-    <a class="programme-card" href="programme-primaire.html">
-      <span class="pc-title">Sport-étude primaire</span>
-      <span class="pc-desc">Bases motrices, plaisir, technique adaptée et habitudes d’entraînement.</span>
-      <span class="pc-tag">Fondations</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="programme-primaire.html">
+        <span class="pc-title">Sport-étude primaire</span>
+        <span class="pc-desc">Bases motrices, plaisir, technique adaptée et habitudes d’entraînement.</span>
+        <span class="pc-tag">Fondations</span>
+      </a>
 
-    <a class="programme-card" href="programme-secondaire.html">
-      <span class="pc-title">Sport-étude secondaire</span>
-      <span class="pc-desc">Technique + physique + mental + stats pour progresser rapidement.</span>
-      <span class="pc-tag">Progression</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="programme-secondaire.html">
+        <span class="pc-title">Sport-étude secondaire</span>
+        <span class="pc-desc">Technique + physique + mental + stats pour progresser rapidement.</span>
+        <span class="pc-tag">Progression</span>
+      </a>
 
-    <a class="programme-card" href="elite-haute-performance.html">
-      <span class="pc-title">Élite / Haute performance</span>
-      <span class="pc-desc">Plan annuel, suivi compétition, objectifs de performance, encadrement complet.</span>
-      <span class="pc-tag">Performance</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="elite-haute-performance.html">
+        <span class="pc-title">Élite / Haute performance</span>
+        <span class="pc-desc">Plan annuel, suivi compétition, objectifs de performance, encadrement complet.</span>
+        <span class="pc-tag">Performance</span>
+      </a>
 
-    <a class="programme-card" href="programme-vip.html">
-      <span class="pc-title">VIP Adultes (12 places)</span>
-      <span class="pc-desc">Même rigueur qu’un athlète : bilan, plan, suivi et optimisation.</span>
-      <span class="pc-tag">VIP</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="programme-vip.html">
+        <span class="pc-title">VIP Adultes (12 places)</span>
+        <span class="pc-desc">Même rigueur qu’un athlète : bilan, plan, suivi et optimisation.</span>
+        <span class="pc-tag">VIP</span>
+      </a>
 
-    <a class="programme-card" href="evaluation-complete.html">
-      <span class="pc-title">Évaluation complète</span>
-      <span class="pc-desc">Bilan technique/physique/mental + priorités claires + plan d’action.</span>
-      <span class="pc-tag">Diagnostic</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="evaluation-complete.html">
+        <span class="pc-title">Évaluation complète</span>
+        <span class="pc-desc">Bilan technique/physique/mental + priorités claires + plan d’action.</span>
+        <span class="pc-tag">Diagnostic</span>
+      </a>
 
-    <a class="programme-card" href="camps.html">
-      <span class="pc-title">Camps (Floride / Québec)</span>
-      <span class="pc-desc">Fondations, validation en compétition, routines et progression accélérée.</span>
-      <span class="pc-tag">Camps</span>
-    </a>
+      <a class="programme-card reveal reveal--card" href="camps.html">
+        <span class="pc-title">Camps (Floride / Québec)</span>
+        <span class="pc-desc">Fondations, validation en compétition, routines et progression accélérée.</span>
+        <span class="pc-tag">Camps</span>
+      </a>
 
-  </div>
-
-  <div class="programmes-home-cta">
-    <a class="btn btn-primary" href="programmes.html">Voir tous les programmes</a>
-  </div>
-</section>
-    <!-- Sous-sections des Programmes -->
-<section id="programme-primaire" class="sub-program">
-  <h3>Sport-étude primaire</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Programme d’initiation structurée au golf pour les élèves du primaire. On travaille les bases du mouvement,
-        la coordination, le plaisir de jouer et les premières habitudes d’entraînement adaptées à leur âge.
-      </p>
-      <p>
-        Objectif : bâtir des fondations saines, l’amour du jeu et une première structure d’entraînement qui respecte
-        le développement global de l’enfant.
-      </p>
-      <a href="programme-primaire.html" class="btn-secondary">Voir la page détaillée</a>
     </div>
-    <div class="sub-program-media">
-      <img src="images/primaire.jpg" alt="Sport-étude primaire">
-      <!-- Plus tard : remplacer par une vidéo
-      <iframe src="https://www.youtube.com/embed/XXXXX" title="Vidéo Sport-étude primaire" frameborder="0" allowfullscreen></iframe>
-      -->
-    </div>
-  </div>
-</section>
 
-<section id="programme-secondaire" class="sub-program">
-  <h3>Sport-étude secondaire</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Programme pour athlètes en développement qui veulent structurer leur progression : technique, données de
-        performance, préparation physique et mentale, gestion des compétitions junior.
-      </p>
-      <p>
-        Objectif : amener l’athlète à comprendre son jeu, à s’engager dans un plan annuel et à devenir autonome dans
-        sa préparation.
-      </p>
-      <a href="programme-secondaire.html" class="btn-secondary">Voir la page détaillée</a>
+    <div class="programmes-home-cta">
+      <a class="btn btn-primary" href="programmes.html">Voir tous les programmes</a>
     </div>
-    <div class="sub-program-media">
-      <img src="images/secondaire.jpg" alt="Sport-étude secondaire">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="programme-cegep" class="sub-program">
-  <h3>Sport-étude Cégep (à venir)</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Environnement de haute performance pour les athlètes qui visent le niveau provincial, national ou universitaire.
-        On optimise la technique, l’organisation de l’entraînement et la gestion des tournois.
-      </p>
-      <p>
-        Objectif : assurer une transition fluide entre le secondaire, le cégep et éventuellement l’université ou les circuits élites.
-      </p>
-      <a href="programme-cegep.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/cegep.jpg" alt="Sport-étude Cégep">
-    </div>
-  </div>
-</section>
-
-<section id="programme-vip" class="sub-program">
-  <h3>VIP Adultes – 12 places</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Accompagnement haute performance pour adultes motivés à structurer leur progression : évaluation complète,
-        objectifs clairs, plan d’entraînement, suivi régulier et analyse des rondes.
-      </p>
-      <p>
-        Objectif : offrir aux adultes le même niveau de rigueur et de support qu’à un athlète élite, dans un cadre humain et motivant.
-      </p>
-      <a href="programme-vip.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/vip-adultes.jpg" alt="Programme VIP Adultes">
-    </div>
-  </div>
-</section>
-
-<!-- Sous-sections des Camps -->
-<section id="camp-courts" class="sub-program">
-  <h3>Camps courts</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Camps intensifs sur quelques jours pour relancer la technique, retrouver les sensations extérieures et
-        valider les fondations avant les premières compétitions.
-      </p>
-      <a href="camp-courts.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/camp-courts.jpg" alt="Camps courts">
-    </div>
-  </div>
-</section>
-
-<section id="camp-parent-enfant" class="sub-program">
-  <h3>Camp parent/enfant</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Une expérience pour apprendre ensemble, comprendre le rôle du parent en compétition et créer une dynamique
-        saine autour de la performance.
-      </p>
-      <a href="camp-parent-enfant.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/camp-parent-enfant.jpg" alt="Camp parent/enfant">
-    </div>
-  </div>
-</section>
-
-<section id="camp-long" class="sub-program">
-  <h3>Camp long</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Camp prolongé avec alternance entraînements/compétitions, débriefs structurés et ajustements techniques en
-        temps réel.
-      </p>
-      <a href="camp-long.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/camp-long.jpg" alt="Camp long">
-    </div>
-  </div>
-</section>
-
-<!-- Élite & services -->
-<section id="elite" class="sub-program">
-  <h3>Programme haute performance (Élite Royal Québec)</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Encadrement complet pour les athlètes qui visent l’excellence : plan annuel, suivi statistique, coaching
-        en tournoi et développement mental.
-      </p>
-      <a href="elite-haute-performance.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/elite.jpg" alt="Programme haute performance">
-    </div>
-  </div>
-</section>
-
-<section id="evaluation" class="sub-program">
-  <h3>Évaluation complète</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Bilan global : technique, mobilité, force/power, putting et jeu court, avec technologies de mesure pour
-        établir un plan de développement clair.
-      </p>
-      <a href="evaluation-complete.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/evaluation.jpg" alt="Évaluation complète">
-    </div>
-  </div>
-</section>
-
-<section id="fitting" class="sub-program">
-  <h3>Fitting de bâtons</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Fitting complet basé sur les données (vitesse, trajectoire, spin, lie, loft) pour que ton équipement
-        travaille avec toi, et non contre toi.
-      </p>
-      <a href="fitting.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/fitting.jpg" alt="Fitting de bâtons">
-    </div>
-  </div>
-</section>
-
-<section id="reparation" class="sub-program">
-  <h3>Réparation de bâtons</h3>
-  <div class="sub-program-content">
-    <div class="sub-program-text">
-      <p>
-        Service local pour garder ton matériel fiable : grips, shafts, ajustements mineurs et mise au point en
-        début de saison.
-      </p>
-      <a href="reparation.html" class="btn-secondary">Voir la page détaillée</a>
-    </div>
-    <div class="sub-program-media">
-      <img src="images/reparation.jpg" alt="Réparation de bâtons">
-    </div>
-  </div>
-</section>
-<section id="coachs" class="coach-section">
-  <h2>Les coachs & spécialistes</h2>
-  <p class="section-subtitle">
-    Une équipe experte pour encadrer les athlètes sur les plans technique, mental, physique et matériel.
-  </p>
-
-  <div class="coach-container">
-
-    <!-- COACH 1 -->
-    <div class="coach-card reveal reveal--card">
-      <img src="kevin Bergeron/IMG_2170.JPG" alt="Kevin Bergeron">
-
-      <h4>Kevin Bergeron</h4>
-      <h5>Entraîneur-chef & fondateur</h5>
-
-      <div class="coach-tags">
-        <span>Développement LTAD</span>
-        <span>Coaching compétition</span>
-        <span>Planification annuelle</span>
+  <!-- Sous-sections des Programmes -->
+  <section id="programme-primaire" class="sub-program reveal">
+    <h3>Sport-étude primaire</h3>
+    <div class="sub-program-content">
+      <div class="sub-program-text">
+        <p>
+          Programme d’initiation structurée au golf pour les élèves du primaire. On travaille les bases du mouvement,
+          la coordination, le plaisir de jouer et les premières habitudes d’entraînement adaptées à leur âge.
+        </p>
+        <p>
+          Objectif : bâtir des fondations saines, l’amour du jeu et une première structure d’entraînement qui respecte
+          le développement global de l’enfant.
+        </p>
+        <a href="programme-primaire.html" class="btn-outline-blue">Voir la page détaillée</a>
       </div>
-
-      <div class="coach-actions">
-        <a href="#apropos" class="coach-btn secondary">Voir la bio</a>
-        <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+      <div class="sub-program-media">
+        <img src="images/primaire.jpg" alt="Sport-étude primaire" />
       </div>
     </div>
+  </section>
 
-    <!-- COACH 2 -->
-    <div class="coach-card reveal reveal--card">
-      <img src="images/autre-coach.jpg" alt="Samuel Mathieu">
-
-      <h4>Samuel Mathieu</h4>
-      <h5>Coach technique & suivi individuel</h5>
-
-      <div class="coach-tags">
-        <span>Analyse technique</span>
-        <span>Suivi quotidien</span>
-        <span>Optimisation swing</span>
+  <section id="programme-secondaire" class="sub-program reveal">
+    <h3>Sport-étude secondaire</h3>
+    <div class="sub-program-content">
+      <div class="sub-program-text">
+        <p>
+          Programme pour athlètes en développement qui veulent structurer leur progression : technique, données de
+          performance, préparation physique et mentale, gestion des compétitions junior.
+        </p>
+        <p>
+          Objectif : amener l’athlète à comprendre son jeu, à s’engager dans un plan annuel et à devenir autonome dans
+          sa préparation.
+        </p>
+        <a href="programme-secondaire.html" class="btn-outline-blue">Voir la page détaillée</a>
       </div>
-
-      <div class="coach-actions">
-        <a href="#" class="coach-btn secondary">Voir la bio</a>
-      </div>
-    </div>
-
-    <!-- COACH 3 -->
-    <div class="coach-card reveal reveal--card">
-      <img src="images/fitter.jpg" alt="Pierre Lemay">
-
-      <h4>Pierre Lemay</h4>
-      <h5>Responsable fitting & équipement</h5>
-
-      <div class="coach-tags">
-        <span>Fitting avancé</span>
-        <span>Réparation de bâtons</span>
-        <span>Optimisation équipement</span>
-      </div>
-
-      <div class="coach-actions">
-        <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+      <div class="sub-program-media">
+        <img src="images/secondaire.jpg" alt="Sport-étude secondaire" />
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section id="programme-cegep" class="sub-program reveal">
+    <h3>Sport-étude Cégep (à venir)</h3>
+    <div class="sub-program-content">
+      <div class="sub-program-text">
+        <p>
+          Environnement de haute performance pour les athlètes qui visent le niveau provincial, national ou universitaire.
+          On optimise la technique, l’organisation de l’entraînement et la gestion des tournois.
+        </p>
+        <p>
+          Objectif : assurer une transition fluide entre le secondaire, le cégep et éventuellement l’université ou les circuits élites.
+        </p>
+        <a href="programme-cegep.html" class="btn-outline-blue">Voir la page détaillée</a>
+      </div>
+      <div class="sub-program-media">
+        <img src="images/cegep.jpg" alt="Sport-étude Cégep" />
+      </div>
+    </div>
+  </section>
 
-  </div>
-</section>
-<section id="installations" class="install-section">
-  <h2>Installations & technologies</h2>
-  <p class="section-subtitle">
-    Un environnement complet pour s’entraîner 12 mois par année : simulateurs, zones de frappe, putting green, force plates et gym.
-  </p>
+  <section id="programme-vip" class="sub-program reveal">
+    <h3>VIP Adultes – 12 places</h3>
+    <div class="sub-program-content">
+      <div class="sub-program-text">
+        <p>
+          Accompagnement haute performance pour adultes motivés à structurer leur progression : évaluation complète,
+          objectifs clairs, plan d’entraînement, suivi régulier et analyse des rondes.
+        </p>
+        <p>
+          Objectif : offrir aux adultes le même niveau de rigueur et de support qu’à un athlète élite, dans un cadre humain et motivant.
+        </p>
+        <a href="programme-vip.html" class="btn-outline-blue">Voir la page détaillée</a>
+      </div>
+      <div class="sub-program-media">
+        <img src="images/vip-adultes.jpg" alt="Programme VIP Adultes" />
+      </div>
+    </div>
+  </section>
 
-  <div class="install-grid">
-    <div class="install-card">
-      <h3>Centre intérieur Haute Performance</h3>
-      <p>
-        Espace dédié au golf de performance avec zones de frappe, simulateurs, putting green et espace d’analyse.
-      </p>
-    </div>
-    <div class="install-card">
-      <h3>Simulateurs & launch monitors</h3>
-      <p>
-        Utilisation de GCQuad / GC3 et logiciels de simulation pour mesurer précisément la trajectoire, le contact
-        et le spin.
-      </p>
-    </div>
-    <div class="install-card">
-      <h3>Force plates & analyse du mouvement</h3>
-      <p>
-        Analyse des forces au sol, répartition de poids et transfert pour optimiser la puissance et la régularité.
-      </p>
-    </div>
-    <div class="install-card">
-      <h3>Zone de putting & jeu court</h3>
-      <p>
-        Surface dédiée au putting et au petit jeu pour travailler roulement, lecture de ligne et contrôle de distance.
-      </p>
-    </div>
-    <div class="install-card">
-      <h3>Gym & préparation physique</h3>
-      <p>
-        Entraînement de force, puissance et mobilité adapté au golf, en lien direct avec les objectifs sur le parcours.
-      </p>
-    </div>
-  </div>
-</section>
+  <!-- COACHS -->
+  <section id="coachs" class="coach-section reveal">
+    <h2>Les coachs & spécialistes</h2>
+    <p class="section-subtitle">
+      Une équipe experte pour encadrer les athlètes sur les plans technique, mental, physique et matériel.
+    </p>
 
+    <div class="coach-container">
+
+      <!-- COACH 1 -->
+      <div class="coach-card reveal reveal--card">
+        <img src="kevin Bergeron/IMG_2170.JPG" alt="Kevin Bergeron" />
+        <h4>Kevin Bergeron</h4>
+        <h5>Entraîneur-chef & fondateur</h5>
+
+        <div class="coach-tags">
+          <span>Développement LTAD</span>
+          <span>Coaching compétition</span>
+          <span>Planification annuelle</span>
+        </div>
+
+        <div class="coach-actions">
+          <a href="#apropos" class="coach-btn secondary">Voir la bio</a>
+          <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+        </div>
+      </div>
+
+      <!-- COACH 2 -->
+      <div class="coach-card reveal reveal--card">
+        <img src="images/autre-coach.jpg" alt="Samuel Mathieu" />
+        <h4>Samuel Mathieu</h4>
+        <h5>Coach technique & suivi individuel</h5>
+
+        <div class="coach-tags">
+          <span>Analyse technique</span>
+          <span>Suivi quotidien</span>
+          <span>Optimisation swing</span>
+        </div>
+
+        <div class="coach-actions">
+          <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+        </div>
+      </div>
+
+      <!-- COACH 3 -->
+      <div class="coach-card reveal reveal--card">
+        <img src="images/fitter.jpg" alt="Pierre Lemay" />
+        <h4>Pierre Lemay</h4>
+        <h5>Responsable fitting & équipement</h5>
+
+        <div class="coach-tags">
+          <span>Fitting avancé</span>
+          <span>Réparation de bâtons</span>
+          <span>Optimisation équipement</span>
+        </div>
+
+        <div class="coach-actions">
+          <a href="#contact" class="coach-btn primary">Prendre RDV</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSTALLATIONS -->
+  <section id="installations" class="install-section reveal">
+    <h2>Installations & technologies</h2>
+    <p class="section-subtitle">
+      Un environnement complet pour s’entraîner 12 mois par année : simulateurs, zones de frappe, putting green, force plates et gym.
+    </p>
+
+    <div class="install-grid">
+      <div class="install-card reveal reveal--card">
+        <h3>Centre intérieur Haute Performance</h3>
+        <p>Espace dédié au golf de performance avec zones de frappe, simulateurs, putting green et espace d’analyse.</p>
+      </div>
+      <div class="install-card reveal reveal--card">
+        <h3>Simulateurs & launch monitors</h3>
+        <p>Utilisation de GCQuad / GC3 et logiciels de simulation pour mesurer précisément la trajectoire, le contact et le spin.</p>
+      </div>
+      <div class="install-card reveal reveal--card">
+        <h3>Force plates & analyse du mouvement</h3>
+        <p>Analyse des forces au sol, répartition de poids et transfert pour optimiser la puissance et la régularité.</p>
+      </div>
+      <div class="install-card reveal reveal--card">
+        <h3>Zone de putting & jeu court</h3>
+        <p>Surface dédiée au putting et au petit jeu pour travailler roulement, lecture de ligne et contrôle de distance.</p>
+      </div>
+      <div class="install-card reveal reveal--card">
+        <h3>Gym & préparation physique</h3>
+        <p>Entraînement de force, puissance et mobilité adapté au golf, en lien direct avec les objectifs sur le parcours.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact & inscriptions</h2>
     <p class="section-subtitle">Écris-moi et je te guiderai vers le bon programme.</p>
 
-    <div class="card">
+    <div class="card reveal reveal--card">
       <p><strong>Courriel :</strong> kevinbcoaching@gmail.com</p>
       <p><strong>Téléphone :</strong> 4185719026</p>
     </div>
@@ -1586,19 +767,10 @@ section {
 <footer>
   Site pré-lancement — Contenu évolutif.
 </footer>
+
 <script>
   // ===== REVEAL ON SCROLL (simple & premium) =====
-  const revealEls = document.querySelectorAll(
-    ".stats-strip, .why-us, #apropos, #galerie, #programmes, #coachs, #installations, #contact, .why-card, .card"
-  );
-
-  revealEls.forEach(el => {
-    el.classList.add("reveal");
-    // Petites sections “card-like”
-    if (el.classList.contains("why-card") || el.classList.contains("card")) {
-      el.classList.add("reveal--card");
-    }
-  });
+  const revealEls = document.querySelectorAll(".reveal");
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1611,5 +783,6 @@ section {
 
   revealEls.forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
