@@ -1,139 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Sport-étude Secondaire – Centre Haute Performance Gen18</title>
-
-  <!-- Tu peux recopier ici le même <style> que dans index.html
-       ou plus tard créer un style.css commun -->
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #222;
-    }
-
-    .page-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px 60px 20px;
-    }
-
-    a {
-      color: #0056c8;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 6px;
-    }
-    header p.subtitle {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 16px;
-    }
-
-    .btn-back {
-      display: inline-block;
-      margin-bottom: 24px;
-      font-size: 13px;
-    }
-
-    .hero-media {
-      margin: 16px 0 28px 0;
-    }
-    .hero-media img {
-      width: 100%;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    section {
-      margin-bottom: 28px;
-    }
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    section p, section li {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sport-étude secondaire | Génération 18</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
 
-  <div class="page-wrapper">
-
-    <a href="index.html#programmes" class="btn-back">← Retour aux programmes</a>
-
-    <header>
-      <h1>Sport-étude primaire</h1>
-      <p class="subtitle">Du plaisir, des bases solides et une structure adaptée au développement des jeunes.</p>
-    </header>
-
-    <div class="hero-media">
-      <img src="images/primaire.jpg" alt="Jeunes golfeurs en sport-étude primaire">
-      <!-- Tu pourras remplacer par une vidéo plus tard -->
-      <!--
-      <iframe src="https://www.youtube.com/embed/XXXXX" frameborder="0" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:12px;"></iframe>
-      -->
-    </div>
-
-    <section>
-      <h2>Objectifs du programme</h2>
-      <p>
-        Introduire le golf dans un cadre structuré, en mettant l’accent sur le plaisir, la découverte et les bases
-        techniques adaptées au niveau de développement des jeunes.
-      </p>
-      <p>
-        On travaille les habiletés motrices, la coordination, la concentration et les premières habitudes d’entraînement.
-      </p>
-    </section>
-
-    <section>
-      <h2>Contenu d’entraînement</h2>
+<header>
+  <div class="container nav-bar">
+    <div class="brand">Centre Haute Performance Golf</div>
+    <nav>
       <ul>
-        <li>Full swing : bases du mouvement et contact solide</li>
-        <li>Jeu court : approche, roulé, sorties de fosse simples</li>
-        <li>Putting : routine de base, posture et visée</li>
-        <li>Habiletés physiques de base : équilibre, coordination, mobilité</li>
+        <li><a href="index.html#accueil">Accueil</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="camps.html">Camps</a></li>
+        <li><a href="evaluation-complete.html">Évaluations</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Inscription</a></li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Structure & horaire</h2>
-      <p>
-        Tu pourras détailler ici la fréquence des séances, les périodes de l’année, le lien avec l’école, etc.
-      </p>
-    </section>
-
-    <section>
-      <h2>Pour qui ?</h2>
-      <p>
-        Jeunes du primaire qui aiment le golf ou veulent le découvrir dans un cadre sérieux, mais humain et motivant.
-      </p>
-    </section>
-
-    <section>
-      <h2>Inscription & informations</h2>
-      <p>
-        Pour les détails d’inscription, places disponibles et modalités :
-      </p>
-      <p>
-        👉 <a href="mailto:info@toncentre.com">info@toncentre.com</a>  
-        👉 ou via la section réservation (cours juniors) sur la page principale
-      </p>
-    </section>
-
+    </nav>
   </div>
+</header>
 
+<main class="container">
+  <section class="page-hero reveal">
+    <h1>Sport-étude secondaire</h1>
+    <p>Technique + physique + mental + stats. On structure la progression et on construit l’autonomie de l’athlète.</p>
+    <div class="actions">
+      <a class="btn primary" href="index.html#contact">Demander une place</a>
+      <a class="btn outline" href="programmes.html">Retour programmes</a>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <h2>Ce que l’athlète développe</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Technique & stratégie</h3>
+        <p>Priorités claires, routines, coaching ciblé + transfert sur le parcours.</p>
+        <div class="kpis"><span class="kpi">Swing</span><span class="kpi">Jeu court</span><span class="kpi">Parcours</span></div>
+      </div>
+      <div class="card">
+        <h3>Physique & mental</h3>
+        <p>Force/power, mobilité, préparation mentale, gestion des compétitions.</p>
+        <div class="kpis"><span class="kpi">Force</span><span class="kpi">Routine</span><span class="kpi">Focus</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <h2>Horaire</h2>
+    <div class="card info">
+      <div class="info-row"><div class="info-label">Fréquence</div><div class="info-value">À préciser (ex: 3x / semaine)</div></div>
+      <div class="info-row"><div class="info-label">Durée</div><div class="info-value">À préciser (ex: 2h)</div></div>
+      <div class="info-row"><div class="info-label">Période</div><div class="info-value">À préciser (ex: Septembre → Juin)</div></div>
+      <div class="info-row"><div class="info-label">Lieu</div><div class="info-value">À préciser</div></div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <h2>Coûts</h2>
+    <div class="card info">
+      <div class="info-row"><div class="info-label">Frais mensuels</div><div class="info-value">À préciser</div></div>
+      <div class="info-row"><div class="info-label">Inclus</div><div class="info-value">Séances + suivi + outils (à préciser)</div></div>
+      <div class="info-row"><div class="info-label">Option évaluation</div><div class="info-value"><a href="evaluation-complete.html">Évaluation complète</a> (recommandée)</div></div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <h2>Inscription</h2>
+    <div class="card">
+      <ol style="padding-left:18px">
+        <li>Contact (message / courriel / téléphone).</li>
+        <li>On valide niveau, objectifs, disponibilité, groupe.</li>
+        <li>Évaluation (optionnelle mais recommandée).</li>
+        <li>Confirmation + paiement.</li>
+      </ol>
+      <div class="actions">
+        <a class="btn primary" href="index.html#contact">Commencer</a>
+        <a class="btn secondary" href="evaluation-complete.html">Réserver une évaluation</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Génération 18 — Centre Haute Performance Golf</footer>
+<script src="assets/site.js"></script>
 </body>
 </html>
