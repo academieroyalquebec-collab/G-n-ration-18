@@ -263,6 +263,19 @@
     @media (max-width: 850px){
       .about-wrap{ grid-template-columns: 1fr; }
       .about-photo{ width: 100%; height: 320px; }
+      /* Texte justifié – section À propos */
+#apropos .card p{
+  text-align: justify;
+  line-height: 1.6;
+  hyphens: auto;
+}
+
+/* Mobile : aligné à gauche pour lisibilité */
+@media (max-width: 768px){
+  #apropos .card p{
+    text-align: left;
+  }
+}
     }
 
     /* ===== PROGRAMMES (cartes) ===== */
@@ -475,7 +488,7 @@
             plus disciplinée et plus résiliente.
           </p>
           <p>
-            J’ai créé le Centre Haute Performance Golf pour offrir un environnement complet :
+            J’ai créé le Centre Gen 18 pour offrir un environnement complet :
             technique, physique, mental, statistiques, matériel… tout sous un même toit. Un espace qui combine
             science, structure et relation humaine.
           </p>
