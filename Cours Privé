@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Gen 18</title>
+
+<style>
+
+/* ===== BASE ===== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root{
+
+  --bg: #f5f0ed;
+
+  --text: #212322;
+
+  --muted: #6b6b6b;
+
+  --dark: #212322;
+
+  --card: #ffffff;
+
+  --border: rgba(33,35,34,0.10);
+
+  --accent: #e5371c;
+
+  --accent-soft: rgba(229,55,28,0.10);
+
+  --shadow: 0 14px 40px rgba(0,0,0,0.06);
+
+}
+
+body{
+
+  font-family: Inter, Helvetica, Arial, sans-serif;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  line-height: 1.6;
+
+}
+
+/* ===== HEADER ===== */
+
+header{
+
+  background: var(--dark);
+
+  color: #fff;
+
+  padding: 14px 24px;
+
+}
+
+.nav-bar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+.brand{
+
+  font-weight:800;
+
+}
+
+nav a{
+
+  color:#fff;
+
+  text-decoration:none;
+
+  margin-left:16px;
+
+}
+
+/* ===== HERO ===== */
+
+.hero{
+
+  padding: 120px 8%;
+
+  background: url("kevin%20Bergeron/Untitled%20design.png") center/cover;
+
+  color:#fff;
+
+}
+
+.hero-title{
+
+  font-size: 2.8rem;
+
+  margin-bottom: 12px;
+
+}
+
+.hero-subtitle{
+
+  max-width: 500px;
+
+  margin-bottom: 20px;
+
+}
+
+.btn{
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  text-decoration:none;
+
+  font-weight:700;
+
+}
+
+.btn-primary{
+
+  background: var(--accent);
+
+  color:#fff;
+
+}
+
+.btn-secondary{
+
+  background:#fff;
+
+  color:#000;
+
+}
+
+/* ===== GRID ===== */
+
+.container{
+
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:40px 20px;
+
+}
+
+.grid{
+
+  display:grid;
+
+  gap:20px;
+
+}
+
+.grid-3{
+
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+
+}
+
+.card{
+
+  background:#fff;
+
+  padding:18px;
+
+  border-radius:12px;
+
+  border:1px solid var(--border);
+
+  box-shadow: var(--shadow);
+
+}
+
+/* ===== CTA ===== */
+
+.cta{
+
+  text-align:center;
+
+  margin-top:40px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-bar">
+
+    <div class="brand">GEN18</div>
+
+    <nav>
+
+      <a href="#">Accueil</a>
+
+      <a href="#">Programmes</a>
+
+      <a href="#">Contact</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <h1 class="hero-title">Développer des athlètes. Construire des joueurs.</h1>
+
+  <p class="hero-subtitle">
+
+    Un environnement structuré pour amener chaque joueur à son plein potentiel.
+
+  </p>
+
+  <a href="#" class="btn btn-primary">Commencer</a>
+
+  <a href="#" class="btn btn-secondary">En savoir plus</a>
+
+</section>
+
+<!-- ===== LEÇONS PRIVÉES ===== -->
+
+<section class="container">
+
+  <h2>Leçons privées juniors</h2>
+
+  <p style="color:var(--muted); margin-bottom:20px;">
+
+    Un encadrement personnalisé pour améliorer technique, performance et confiance.
+
+  </p>
+
+  <div class="grid grid-3">
+
+    <div class="card">
+
+      <h4>Évaluation complète</h4>
+
+      <p>Analyse du joueur pour établir un plan clair et adapté.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h4>Technique & contact</h4>
+
+      <p>Travail du swing, trajectoire et régularité.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h4>Jeu court</h4>
+
+      <p>Putting, chipping et contrôle des distances.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h4>Physique</h4>
+
+      <p>Coordination, équilibre et mobilité.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h4>Stratégie</h4>
+
+      <p>Lecture du jeu et prise de décision.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h4>Plan personnalisé</h4>
+
+      <p>Objectifs clairs et exercices à suivre.</p>
+
+    </div>
+
+  </div>
+
+  <div class="cta">
+
+    <h3>Prêt à progresser ?</h3>
+
+    <p style="color:var(--muted); margin-bottom:16px;">
+
+      Réservez une leçon privée dès maintenant.
+
+    </p>
+
+    <a href="#" class="btn btn-primary">Réserver</a>
+
+  </div>
+
+</section>
+
+</body>
+
+</html>
